@@ -1,15 +1,10 @@
-/* Dark Theme Personal Website with Cascading Elements */
+/* Minimalist Dark Theme */
 
 :root {
-    --bg-dark: #0a0a0f;
+    --bg-dark: #000000;
     --text-primary: #ffffff;
     --text-secondary: #b0b0c0;
-    --accent-orange: #ff6b35;
-    --accent-pink: #ff006e;
-    --accent-yellow: #ffbe0b;
-    --accent-blue: #3a86ff;
-    --link-color: #8bb8ff;
-    --content-width: 45%;
+    --link-color: #50bdec;
 }
 
 * {
@@ -18,474 +13,780 @@
     box-sizing: border-box;
 }
 
+/* Pulsing orb cursor */
+.cursor-orb {
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 0, 180, 0.7) 0%, rgba(200, 0, 150, 0.3) 35%, transparent 60%);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    animation: pulse-orb 4s ease-in-out infinite;
+    mix-blend-mode: difference;
+}
+
+@keyframes pulse-orb {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.4);
+        opacity: 0.5;
+    }
+}
+
 html {
     scroll-behavior: smooth;
+    height: 100%;
+    overscroll-behavior: none;
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: var(--bg-dark);
-    color: var(--text-primary);
-    line-height: 1.6;
-    overflow-x: hidden;
-    min-height: 100vh;
+    font-family: 'Helvetica Neue Condensed', 'Helvetica Condensed', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    font-stretch: condensed;
+    background-color: var(--bg-dark);
+    overscroll-behavior: none;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 16px;
     position: relative;
+    min-height: 100vh;
 }
 
-/* Portrait Container - Fixed Bottom Left */
+/* Portrait Background */
 .portrait-container {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 400px;
-    height: 600px;
-    z-index: 10;
-    pointer-events: none;
+    top: 35%;
+    /* bottom: 0;
+    left: 20; */
+    height: 70vh;
+    width: auto;
+    z-index: 1;
+    pointer-events: auto;
 }
 
 .portrait {
-    width: 100%;
     height: 100%;
+    width: auto;
+    display: block;
     object-fit: contain;
     object-position: bottom left;
-    opacity: 0.95;
 }
 
-/* Cascading Elements Container */
-.cascade-container {
+/* Background Shapes */
+.background-shapes {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 1;
+    z-index: 0;
 }
 
-/* Individual Cascade Elements */
-.cascade-element {
+.bg-shape {
     position: absolute;
-    animation: cascade 15s infinite ease-in-out;
-    opacity: 0;
+    opacity: 0.9;
 }
 
-/* Plumerias */
-.plumeria-1 {
-    width: 80px;
-    left: 10%;
-    animation-delay: 0s;
-    animation-duration: 12s;
+/* Sparkle twinkle animation */
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
 }
 
-.plumeria-2 {
-    width: 100px;
-    left: 25%;
-    animation-delay: 4s;
-    animation-duration: 14s;
+/* Slow constellation fade for shapes */
+@keyframes constellation {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.85; }
 }
 
-/* Cubes */
-.cube-2 {
-    width: 60px;
-    left: 15%;
-    animation-delay: 2s;
-    animation-duration: 13s;
+/* Apply twinkle to all sparkles */
+[class*="shape-sparkle"] {
+    animation: twinkle ease-in-out infinite;
 }
 
-.cube-3 {
-    width: 70px;
-    left: 35%;
-    animation-delay: 6s;
-    animation-duration: 15s;
-}
+.shape-sparkle-1 { animation-duration: 12.8s; animation-delay: 0s; }
+.shape-sparkle-2 { animation-duration: 16.4s; animation-delay: 1.7s; }
+.shape-sparkle-3 { animation-duration: 11.2s; animation-delay: 4.3s; }
+.shape-sparkle-4 { animation-duration: 14.8s; animation-delay: 0.9s; }
+.shape-sparkle-5 { animation-duration: 18.0s; animation-delay: 6.2s; }
+.shape-sparkle-6 { animation-duration: 12.0s; animation-delay: 2.8s; }
+.shape-sparkle-7 { animation-duration: 15.6s; animation-delay: 7.4s; }
+.shape-sparkle-8 { animation-duration: 10.4s; animation-delay: 3.6s; }
+.shape-sparkle-9 { animation-duration: 17.2s; animation-delay: 5.1s; }
+.shape-sparkle-10 { animation-duration: 13.6s; animation-delay: 0.4s; }
+.shape-sparkle-11 { animation-duration: 11.6s; animation-delay: 4.7s; }
+.shape-sparkle-12 { animation-duration: 14.4s; animation-delay: 8.3s; }
+.shape-sparkle-13 { animation-duration: 16.0s; animation-delay: 1.2s; }
+.shape-sparkle-14 { animation-duration: 12.4s; animation-delay: 6.8s; }
+.shape-sparkle-15 { animation-duration: 10.8s; animation-delay: 1.6s; }
+.shape-sparkle-16 { animation-duration: 15.2s; animation-delay: 5.3s; }
+.shape-sparkle-17 { animation-duration: 16.8s; animation-delay: 7.9s; }
+.shape-sparkle-18 { animation-duration: 13.2s; animation-delay: 2.4s; }
+.shape-sparkle-19 { animation-duration: 10.0s; animation-delay: 5.7s; }
+.shape-sparkle-20 { animation-duration: 14.0s; animation-delay: 0.2s; }
+.shape-sparkle-21 { animation-duration: 17.6s; animation-delay: 8.6s; }
+.shape-sparkle-22 { animation-duration: 12.8s; animation-delay: 3.9s; }
+.shape-sparkle-23 { animation-duration: 14.4s; animation-delay: 1.4s; }
+.shape-sparkle-24 { animation-duration: 11.6s; animation-delay: 6.1s; }
+.shape-sparkle-25 { animation-duration: 16.0s; animation-delay: 2.6s; }
+.shape-sparkle-26 { animation-duration: 13.2s; animation-delay: 7.2s; }
+.shape-sparkle-27 { animation-duration: 14.8s; animation-delay: 4.8s; }
+.shape-sparkle-28 { animation-duration: 13.6s; animation-delay: 2.1s; }
+.shape-sparkle-29 { animation-duration: 15.2s; animation-delay: 6.4s; }
+.shape-sparkle-30 { animation-duration: 10.8s; animation-delay: 0.7s; }
+.shape-sparkle-31 { animation-duration: 16.4s; animation-delay: 4.2s; }
+.shape-sparkle-32 { animation-duration: 12.4s; animation-delay: 7.6s; }
+.shape-sparkle-33 { animation-duration: 14.0s; animation-delay: 3.3s; }
+.shape-sparkle-34 { animation-duration: 12.8s; animation-delay: 1.1s; }
+.shape-sparkle-35 { animation-duration: 15.6s; animation-delay: 4.4s; }
+.shape-sparkle-36 { animation-duration: 11.2s; animation-delay: 6.7s; }
+.shape-sparkle-37 { animation-duration: 16.8s; animation-delay: 1.8s; }
+.shape-sparkle-38 { animation-duration: 12.0s; animation-delay: 8.1s; }
+.shape-sparkle-39 { animation-duration: 14.4s; animation-delay: 0.3s; }
+.shape-sparkle-40 { animation-duration: 11.6s; animation-delay: 5.4s; }
+.shape-sparkle-41 { animation-duration: 16.0s; animation-delay: 2.9s; }
+.shape-sparkle-42 { animation-duration: 13.2s; animation-delay: 4.6s; }
+.shape-sparkle-43 { animation-duration: 10.4s; animation-delay: 1.5s; }
+.shape-sparkle-44 { animation-duration: 14.8s; animation-delay: 6.3s; }
+.shape-sparkle-45 { animation-duration: 12.0s; animation-delay: 3.1s; }
+.shape-sparkle-46 { animation-duration: 15.2s; animation-delay: 7.7s; }
+.shape-sparkle-47 { animation-duration: 11.2s; animation-delay: 3.8s; }
+.shape-sparkle-48 { animation-duration: 14.0s; animation-delay: 0.6s; }
+.shape-sparkle-49 { animation-duration: 12.8s; animation-delay: 5.9s; }
+.shape-sparkle-50 { animation-duration: 16.0s; animation-delay: 2.2s; }
+.shape-sparkle-51 { animation-duration: 10.8s; animation-delay: 8.4s; }
+.shape-sparkle-52 { animation-duration: 15.2s; animation-delay: 4.1s; }
+.shape-sparkle-53 { animation-duration: 12.4s; animation-delay: 0.8s; }
+.shape-sparkle-54 { animation-duration: 16.8s; animation-delay: 6.6s; }
+.shape-sparkle-55 { animation-duration: 11.6s; animation-delay: 3.4s; }
+.shape-sparkle-56 { animation-duration: 14.4s; animation-delay: 7.1s; }
+.shape-sparkle-57 { animation-duration: 13.6s; animation-delay: 0.1s; }
+.shape-sparkle-58 { animation-duration: 17.2s; animation-delay: 5.2s; }
+.shape-sparkle-59 { animation-duration: 10.0s; animation-delay: 1.9s; }
+.shape-sparkle-60 { animation-duration: 15.6s; animation-delay: 7.3s; }
 
-.cube-4 {
-    width: 50px;
-    left: 45%;
-    animation-delay: 8s;
-    animation-duration: 11s;
-}
+/* Non-sparkle shapes are static */
 
-.cube-5 {
-    width: 65px;
+/* Sparkles with varying sizes - spread across entire viewport, behind portrait */
+.shape-sparkle-1 {
+    width: 18px;
+    top: 3%;
     left: 5%;
-    animation-delay: 10s;
-    animation-duration: 16s;
 }
 
-/* Blocks */
-.block-1 {
-    width: 75px;
-    left: 30%;
-    animation-delay: 1s;
-    animation-duration: 14s;
+.shape-sparkle-2 {
+    width: 65px;
+    top: 7%;
+    right: 38%;
 }
 
-.block-2 {
+.shape-sparkle-3 {
+    width: 24px;
+    top: 14%;
+    left: 22%;
+}
+
+.shape-sparkle-4 {
+    width: 72px;
+    top: 11%;
+    right: 5%;
+}
+
+.shape-sparkle-5 {
+    width: 15px;
+    top: 21%;
+    left: 8%;
+}
+
+.shape-sparkle-6 {
+    width: 45px;
+    top: 26%;
+    right: 12%;
+}
+
+.shape-sparkle-7 {
+    width: 28px;
+    top: 33%;
+    left: 15%;
+}
+
+.shape-sparkle-8 {
+    width: 58px;
+    top: 38%;
+    right: 3%;
+}
+
+.shape-sparkle-9 {
+    width: 20px;
+    top: 44%;
+    left: 3%;
+}
+
+.shape-sparkle-10 {
+    width: 78px;
+    top: 41%;
+    right: 18%;
+}
+
+.shape-sparkle-11 {
+    width: 32px;
+    top: 52%;
+    left: 25%;
+}
+
+.shape-sparkle-12 {
+    width: 22px;
+    top: 57%;
+    right: 8%;
+}
+
+/* More sparkles - organic placement across full viewport */
+.shape-sparkle-13 {
     width: 55px;
+    top: 63%;
+    left: 12%;
+}
+
+.shape-sparkle-14 {
+    width: 16px;
+    top: 68%;
+    right: 52%;
+}
+
+.shape-sparkle-15 {
+    width: 42px;
+    top: 72%;
+    left: 6%;
+}
+
+.shape-sparkle-16 {
+    width: 26px;
+    top: 78%;
+    right: 38%;
+}
+
+.shape-sparkle-17 {
+    width: 68px;
+    top: 82%;
+    left: 18%;
+}
+
+.shape-sparkle-18 {
+    width: 19px;
+    top: 86%;
+    right: 25%;
+}
+
+.shape-sparkle-19 {
+    width: 48px;
+    top: 91%;
+    left: 10%;
+}
+
+.shape-sparkle-20 {
+    width: 14px;
+    top: 17%;
+    right: 58%;
+}
+
+.shape-sparkle-21 {
+    width: 36px;
+    top: 48%;
     left: 20%;
-    animation-delay: 5s;
-    animation-duration: 12s;
 }
 
-.block-3 {
+.shape-sparkle-22 {
+    width: 52px;
+    top: 75%;
+    right: 50%;
+}
+
+/* Additional larger sparkles on the left */
+.shape-sparkle-23 {
     width: 85px;
-    left: 40%;
-    animation-delay: 9s;
-    animation-duration: 17s;
+    top: 8%;
+    left: 12%;
 }
 
-/* Paradise Flower */
-.paradise {
+.shape-sparkle-24 {
+    width: 70px;
+    top: 28%;
+    left: 1%;
+}
+
+.shape-sparkle-25 {
     width: 90px;
-    left: 50%;
-    animation-delay: 3s;
-    animation-duration: 13s;
+    top: 55%;
+    left: 8%;
 }
 
-/* Cascade Animation */
-@keyframes cascade {
-    0% {
-        transform: translateY(-100px) rotate(0deg);
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    70% {
-        opacity: 1;
-        transform: translateY(calc(100vh - 300px)) rotate(180deg);
-    }
-    85% {
-        opacity: 0.3;
-        filter: blur(2px);
-        transform: translateY(calc(100vh - 150px)) rotate(270deg);
-    }
-    100% {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-        filter: blur(8px) saturate(3);
-    }
+.shape-sparkle-26 {
+    width: 75px;
+    top: 38%;
+    left: 18%;
 }
 
-/* Color Dissolve Gradient at Bottom */
-.color-dissolve {
+.shape-sparkle-27 {
+    width: 80px;
+    top: 85%;
+    left: 2%;
+}
+
+/* Additional sparkles between eye, bindu and purple flower */
+.shape-sparkle-28 {
+    width: 45px;
+    top: 25%;
+    left: 32%;
+}
+
+.shape-sparkle-29 {
+    width: 28px;
+    top: 38%;
+    left: 28%;
+}
+
+.shape-sparkle-30 {
+    width: 55px;
+    top: 52%;
+    left: 35%;
+}
+
+.shape-sparkle-31 {
+    width: 22px;
+    top: 32%;
+    left: 40%;
+}
+
+.shape-sparkle-32 {
+    width: 38px;
+    top: 62%;
+    left: 30%;
+}
+
+.shape-sparkle-33 {
+    width: 32px;
+    top: 45%;
+    left: 25%;
+}
+
+/* Sparkles intersecting viewport borders and bottom right */
+.shape-sparkle-34 {
+    width: 50px;
+    top: -1%;
+    right: 28%;
+}
+
+.shape-sparkle-35 {
+    width: 35px;
+    top: 40%;
+    right: -1%;
+}
+
+.shape-sparkle-36 {
+    width: 60px;
+    top: 92%;
+    right: 15%;
+}
+
+.shape-sparkle-37 {
+    width: 28px;
+    top: 85%;
+    right: 8%;
+}
+
+.shape-sparkle-38 {
+    width: 45px;
+    top: 78%;
+    right: 3%;
+}
+
+.shape-sparkle-39 {
+    width: 22px;
+    top: 70%;
+    right: -0.5%;
+}
+
+.shape-sparkle-40 {
+    width: 55px;
+    top: 88%;
+    right: 22%;
+}
+
+.shape-sparkle-41 {
+    width: 30px;
+    top: 95%;
+    right: 35%;
+}
+
+.shape-sparkle-42 {
+    width: 40px;
+    top: 65%;
+    right: 12%;
+}
+
+/* Additional small sparkles scattered across background */
+.shape-sparkle-43 {
+    width: 12px;
+    top: 15%;
+    left: 45%;
+}
+
+.shape-sparkle-44 {
+    width: 16px;
+    top: 33%;
+    right: 55%;
+}
+
+.shape-sparkle-45 {
+    width: 10px;
+    top: 58%;
+    left: 52%;
+}
+
+.shape-sparkle-46 {
+    width: 14px;
+    top: 22%;
+    right: 65%;
+}
+
+.shape-sparkle-47 {
+    width: 18px;
+    top: 73%;
+    left: 42%;
+}
+
+.shape-sparkle-48 {
+    width: 11px;
+    top: 8%;
+    right: 72%;
+}
+
+.shape-sparkle-49 {
+    width: 15px;
+    top: 45%;
+    left: 58%;
+}
+
+.shape-sparkle-50 {
+    width: 13px;
+    top: 82%;
+    right: 48%;
+}
+
+.shape-sparkle-51 {
+    width: 17px;
+    top: 28%;
+    left: 62%;
+}
+
+.shape-sparkle-52 {
+    width: 10px;
+    top: 67%;
+    right: 60%;
+}
+
+.shape-sparkle-53 {
+    width: 14px;
+    top: 12%;
+    left: 72%;
+}
+
+.shape-sparkle-54 {
+    width: 12px;
+    top: 50%;
+    right: 78%;
+}
+
+.shape-sparkle-55 {
+    width: 16px;
+    top: 38%;
+    left: 48%;
+}
+
+.shape-sparkle-56 {
+    width: 11px;
+    top: 90%;
+    right: 62%;
+}
+
+.shape-sparkle-57 {
+    width: 15px;
+    top: 18%;
+    left: 55%;
+}
+
+.shape-sparkle-58 {
+    width: 13px;
+    top: 76%;
+    right: 70%;
+}
+
+.shape-sparkle-59 {
+    width: 18px;
+    top: 42%;
+    left: 68%;
+}
+
+.shape-sparkle-60 {
+    width: 10px;
+    top: 60%;
+    right: 82%;
+}
+
+/* Static positions for constellation shapes - spread organically, same categories far apart */
+
+/* tetris-1 - top right area */
+.shape-2 {
+    width: 160px;
+    top: 6%;
+    right: 15%;
+    transform: rotate(180deg);
+}
+
+/* tetris-2 - bottom left area (far from tetris-1) */
+.shape-3 {
+    width: 220px;
+    top: 82%;
+    left: 12%;
+}
+
+/* flower-purple - in front of portrait, slightly right */
+.shape-4 {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 300px;
-    background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(10, 10, 15, 0.3) 30%,
-        rgba(10, 10, 15, 0.8) 60%,
-        var(--bg-dark) 90%
-    );
+    width: 210px;
+    top: 78%;
+    left: 24%;
     z-index: 2;
     pointer-events: none;
 }
 
-.color-dissolve::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(
-        90deg,
-        rgba(255, 107, 53, 0.1) 0%,
-        rgba(255, 0, 110, 0.1) 25%,
-        rgba(255, 190, 11, 0.1) 50%,
-        rgba(58, 134, 255, 0.1) 75%,
-        rgba(255, 107, 53, 0.1) 100%
-    );
-    filter: blur(40px);
-    animation: colorShift 10s infinite ease-in-out;
+/* cluster-blue - top left */
+.shape-5 {
+    width: 105px;
+    top: 7%;
+    left: 3%;
 }
 
-@keyframes colorShift {
-    0%, 100% {
-        opacity: 0.3;
-        transform: scaleX(1);
-    }
-    50% {
-        opacity: 0.5;
-        transform: scaleX(1.1);
-    }
+/* cluster-purple - center area */
+.shape-6 {
+    width: 160px;
+    top: 35%;
+    right: 42%;
 }
 
-/* Main Content - Right Justified */
+/* cube-1 - mid-left at viewport edge */
+.shape-7 {
+    width: 150px;
+    top: 55%;
+    left: -2%;
+}
+
+/* bindu - bottom right */
+.shape-8 {
+    width: 155px;
+    top: 77%;
+    right: 28%;
+}
+
+/* eye-1 - behind Hello text */
+.shape-9 {
+    width: 180px;
+    top: 2%;
+    left: 29%;
+}
+
+/* flower-blue - mid-right */
+.shape-10 {
+    width: 150px;
+    top: 48%;
+    right: 7%;
+}
+
+/* cube-2 - bottom right */
+.shape-11 {
+    width: 145px;
+    top: 80%;
+    right: 2%;
+}
+
+/* eye-2 - lower center */
+.shape-13 {
+    width: 125px;
+    top: 58%;
+    right: 42%;
+}
+
+/* Om Symbol at Top */
+.om-symbol-top {
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: var(--text-secondary);
+    z-index: 10;
+}
+
+
+/* Main Content Container */
 .content {
-    position: relative;
-    z-index: 5;
-    width: var(--content-width);
+    max-width: 900px;
     margin-left: auto;
-    padding: 80px 60px 100px 40px;
-    min-height: 100vh;
+    margin-right: 80px;
+    padding: 80px 100px;
+    position: relative;
+    z-index: 2;
 }
 
 /* Om Symbol */
 .om-symbol {
-    font-size: 2rem;
-    color: var(--accent-yellow);
-    opacity: 0.8;
-    margin-bottom: 1rem;
+    font-size: 3rem;
+    color: #2E7FC2;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    margin-left: calc(-1 * (900px - 100vw + 80px) / 2);
+    margin-right: calc(-1 * (900px - 100vw + 80px) / 2);
 }
 
 /* Typography */
 h1 {
-    font-size: 2.5rem;
-    font-weight: 300;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    text-align: right;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
 }
 
-.name {
-    font-size: 3.5rem;
-    font-weight: 600;
-    background: linear-gradient(135deg, var(--accent-orange), var(--accent-pink));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
 
 .subtitle {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--text-secondary);
     margin-bottom: 3rem;
-    text-align: right;
 }
 
 h2 {
-    font-size: 1.8rem;
-    font-weight: 500;
-    margin: 3rem 0 1.5rem;
-    text-align: right;
+    font-size: 1.5rem;
+    font-weight: 400;
     color: var(--text-primary);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 0.5rem;
+    margin: 3rem 0 1rem;
 }
 
 h3 {
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin: 1.5rem 0 0.5rem;
-    text-align: right;
-    color: var(--accent-blue);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin: 2rem 0 0.5rem;
 }
 
 p {
     margin-bottom: 1rem;
-    text-align: right;
     color: var(--text-secondary);
-    font-weight: 300;
+    text-align: justify;
 }
 
 /* Sections */
 section {
-    margin-bottom: 3rem;
-}
-
-.intro {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 /* Links */
 a {
     color: var(--link-color);
     text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: all 0.3s ease;
 }
 
 a:hover {
-    border-bottom-color: var(--link-color);
+    text-decoration: underline;
 }
 
 /* Experience Section */
 .position {
     margin-bottom: 2rem;
-    padding: 1rem;
-    border-right: 3px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-}
-
-.position:hover {
-    border-right-color: var(--accent-orange);
-    background: rgba(255, 255, 255, 0.02);
 }
 
 .highlight {
-    color: var(--accent-yellow);
-    font-weight: 400;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+/* Inline Sparkle */
+.inline-sparkle {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    vertical-align: middle;
+    margin: 0 0em;
 }
 
 /* Publications */
 .publication {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 8px;
-    border-right: 3px solid var(--accent-pink);
+    margin-bottom: 2.5rem;
 }
 
 .publication h3 {
-    color: var(--text-primary);
-    text-align: right;
+    margin-top: 0;
     margin-bottom: 0.5rem;
+}
+
+.authors {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.author-highlight {
+    color: #f4679a;
 }
 
 .venue {
-    color: var(--accent-yellow);
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.note {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    opacity: 0.8;
 }
 
 .links {
-    text-align: right;
     margin-top: 0.5rem;
 }
 
 .links a {
-    margin-left: 1rem;
-    padding: 0.25rem 0.75rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-}
-
-.links a:hover {
-    background: var(--accent-blue);
-    color: white;
-    border-bottom-color: transparent;
+    margin-right: 1rem;
 }
 
 /* Contact Section */
 .email {
-    font-size: 1.1rem;
-    color: var(--accent-orange);
-    font-weight: 400;
+    color: var(--text-secondary);
 }
 
 /* Responsive Design */
-@media (max-width: 1400px) {
-    :root {
-        --content-width: 55%;
-    }
-    
-    .portrait-container {
-        width: 350px;
-        height: 500px;
-    }
-}
-
-@media (max-width: 1200px) {
-    :root {
-        --content-width: 60%;
-    }
-    
-    .portrait-container {
-        width: 300px;
-        height: 450px;
-    }
-}
-
-@media (max-width: 992px) {
-    :root {
-        --content-width: 100%;
-    }
-    
+@media (max-width: 900px) {
     .content {
-        padding: 60px 40px 400px;
-        text-align: left !important;
+        padding: 60px 60px;
+        margin-right: 40px;
     }
-    
-    h1, h2, h3, p, .subtitle, .links {
-        text-align: left !important;
+}
+
+@media (max-width: 600px) {
+    .content {
+        padding: 40px 30px;
+        margin: 0 auto;
     }
-    
+
     .portrait-container {
-        width: 100%;
-        height: 350px;
-        position: fixed;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
-    .portrait {
-        object-position: center bottom;
+        height: 46vh;
         opacity: 0.3;
-    }
-    
-    .position, .publication {
-        border-right: none;
-        border-left: 3px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .publication {
-        border-left-color: var(--accent-pink);
-    }
-    
-    .position:hover {
-        border-left-color: var(--accent-orange);
-    }
-}
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-    
-    .name {
-        font-size: 2.5rem;
-    }
-    
-    .cascade-element {
-        animation-duration: 10s !important;
-    }
-    
-    .content {
-        padding: 40px 20px 400px;
-    }
-}
-
-/* Loading Animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-section {
-    animation: fadeIn 0.8s ease-out;
-}
-
-/* Print Styles */
-@media print {
-    .cascade-container,
-    .color-dissolve,
-    .portrait-container {
-        display: none;
-    }
-    
-    body {
-        background: white;
-        color: black;
-    }
-    
-    .content {
-        width: 100%;
-        margin: 0;
-        padding: 20px;
     }
 }
