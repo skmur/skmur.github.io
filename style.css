@@ -3,7 +3,7 @@
 :root {
     --bg-dark: #000000;
     --text-primary: #ffffff;
-    --text-secondary: #c8c8d8;
+    --text-secondary: #b8b8c8;
     --link-color: #50bdec;
 }
 
@@ -659,12 +659,11 @@ body {
 
 /* Om Symbol */
 .om-symbol {
-    font-size: 3rem;
-    color: #2E7FC2;
+    font-family: 'Helvetica Neue Condensed', 'Helvetica Condensed', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
     margin-bottom: 1.5rem;
     text-align: center;
-    margin-left: calc(-1 * (900px - 100vw + 80px) / 2);
-    margin-right: calc(-1 * (900px - 100vw + 80px) / 2);
 }
 
 /* Typography */
