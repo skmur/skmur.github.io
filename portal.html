@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thought Forms</title>
+    <link rel="icon" type="image/svg+xml" href="images/v2/bindu.svg">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            background: #000;
+            font-family: 'Helvetica Neue Condensed', 'Helvetica Condensed', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 400;
+            font-stretch: condensed;
+        }
+
+        /* Floating shapes */
+        .portal-shape {
+            position: fixed;
+            pointer-events: none;
+            will-change: transform;
+        }
+
+        /* Sparkle twinkle — CSS handles opacity, JS handles transform */
+        .portal-shape.sparkle {
+            animation: twinkle ease-in-out infinite;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+
+        /* Quote */
+        .quote-overlay {
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 680px;
+            padding: 40px;
+            z-index: 5;
+            pointer-events: auto;
+        }
+
+        .quote-overlay p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            text-align: center;
+            margin-bottom: 1rem;
+            text-shadow:
+                0 0 8px rgba(255, 255, 255, 0.35),
+                0 0 25px rgba(200, 180, 255, 0.25),
+                0 0 50px rgba(150, 130, 255, 0.15),
+                0 0 90px rgba(100, 80, 200, 0.08);
+            animation: glow-pulse 6s ease-in-out infinite;
+        }
+
+        .quote-overlay a {
+            color: #41baee;
+            text-decoration: underline;
+            text-shadow:
+                0 0 12px rgba(65, 186, 238, 0.6),
+                0 0 30px rgba(65, 186, 238, 0.3);
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% {
+                text-shadow:
+                    0 0 8px rgba(255, 255, 255, 0.35),
+                    0 0 25px rgba(200, 180, 255, 0.25),
+                    0 0 50px rgba(150, 130, 255, 0.15),
+                    0 0 90px rgba(100, 80, 200, 0.08);
+            }
+            50% {
+                text-shadow:
+                    0 0 12px rgba(255, 255, 255, 0.45),
+                    0 0 35px rgba(200, 180, 255, 0.35),
+                    0 0 70px rgba(150, 130, 255, 0.2),
+                    0 0 110px rgba(100, 80, 200, 0.12);
+            }
+        }
+
+        /* Back link */
+        .back-link {
+            position: fixed;
+            top: 30px; left: 30px;
+            z-index: 10;
+            color: rgba(255, 255, 255, 0.3);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+        }
+        .back-link:hover {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Cursor orb */
+        .cursor-orb {
+            position: fixed;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 0, 180, 0.7) 0%, rgba(200, 0, 150, 0.3) 35%, transparent 60%);
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            animation: pulse-orb 4s ease-in-out infinite;
+            mix-blend-mode: difference;
+        }
+
+        @keyframes pulse-orb {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+            50% { transform: translate(-50%, -50%) scale(1.4); opacity: 0.5; }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .quote-overlay {
+                max-width: 90vw;
+                padding: 20px;
+            }
+            .quote-overlay p {
+                font-size: 0.95rem;
+                line-height: 1.7;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">&#8592; back</a>
+
+    <!-- Floating shapes — same art as main page, animated by JS transforms -->
+
+    <!-- Sparkles (twinkle via CSS, drift via JS) -->
+    <img src="images/v2/sparkle-1.svg" alt="" class="portal-shape sparkle" style="width:20px; top:4%;  left:7%;   opacity:0.5; animation-duration:6.2s; animation-delay:-1.4s;" data-depth="0.3">
+    <img src="images/v2/sparkle-2.svg" alt="" class="portal-shape sparkle" style="width:55px; top:11%; right:14%; opacity:0.6; animation-duration:7.8s; animation-delay:-3.2s;" data-depth="0.6">
+    <img src="images/v2/sparkle-1.svg" alt="" class="portal-shape sparkle" style="width:28px; top:24%; left:2%;  opacity:0.7; animation-duration:5.4s; animation-delay:-4.8s;" data-depth="0.8">
+    <img src="images/v2/sparkle-2.svg" alt="" class="portal-shape sparkle" style="width:22px; top:44%; left:14%; opacity:0.5; animation-duration:8.0s; animation-delay:-2.1s;" data-depth="0.7">
+    <img src="images/v2/sparkle-1.svg" alt="" class="portal-shape sparkle" style="width:65px; top:50%; right:4%; opacity:0.5; animation-duration:6.8s; animation-delay:-5.5s;" data-depth="0.5">
+    <img src="images/v2/sparkle-1.svg" alt="" class="portal-shape sparkle" style="width:15px; top:66%; left:24%; opacity:0.8; animation-duration:5.0s; animation-delay:-0.7s;" data-depth="0.9">
+    <img src="images/v2/sparkle-2.svg" alt="" class="portal-shape sparkle" style="width:40px; top:84%; right:28%; opacity:0.5; animation-duration:7.4s; animation-delay:-6.1s;" data-depth="0.6">
+    <img src="images/v2/sparkle-1.svg" alt="" class="portal-shape sparkle" style="width:18px; top:91%; left:11%; opacity:0.6; animation-duration:6.0s; animation-delay:-3.7s;" data-depth="0.7">
+    <img src="images/v2/sparkle-1.svg" alt="" class="portal-shape sparkle" style="width:35px; top:38%; right:32%; opacity:0.6; animation-duration:7.2s; animation-delay:-1.9s;" data-depth="0.8">
+    <img src="images/v2/sparkle-2.svg" alt="" class="portal-shape sparkle" style="width:45px; top:72%; right:8%; opacity:0.4; animation-duration:8.4s; animation-delay:-4.3s;" data-depth="0.4">
+
+    <!-- Larger shapes -->
+    <img src="images/v2/flower-purple.svg" alt="" class="portal-shape" style="width:190px; top:12%; right:3%;  opacity:0.35;" data-depth="0.2">
+    <img src="images/v2/cluster-blue.svg"  alt="" class="portal-shape" style="width:110px; top:6%;  left:33%; opacity:0.4;"  data-depth="0.25">
+    <img src="images/v2/tetris-1.svg"      alt="" class="portal-shape" style="width:150px; top:18%; right:38%; opacity:0.4;" data-depth="0.4">
+    <img src="images/v2/eye-1.svg"         alt="" class="portal-shape" style="width:160px; top:8%;  left:58%; opacity:0.35;" data-depth="0.3">
+    <img src="images/v2/cube-1.svg"        alt="" class="portal-shape" style="width:140px; top:28%; right:6%; opacity:0.4;"  data-depth="0.35">
+    <img src="images/v2/eye-2.svg"         alt="" class="portal-shape" style="width:130px; top:36%; left:4%;  opacity:0.4;"  data-depth="0.5">
+    <img src="images/v2/bindu.svg"         alt="" class="portal-shape" style="width:110px; top:56%; left:4%;  opacity:0.35;" data-depth="0.3">
+    <img src="images/v2/cluster-purple.svg" alt="" class="portal-shape" style="width:130px; top:62%; right:18%; opacity:0.4;" data-depth="0.45">
+    <img src="images/v2/cube-2.svg"        alt="" class="portal-shape" style="width:130px; top:72%; left:6%;  opacity:0.4;"  data-depth="0.4">
+    <img src="images/v2/flower-blue.svg"   alt="" class="portal-shape" style="width:170px; top:76%; right:8%; opacity:0.35;" data-depth="0.3">
+    <img src="images/v2/tetris-2.svg"      alt="" class="portal-shape" style="width:170px; top:82%; left:18%; opacity:0.4;"  data-depth="0.35">
+    <img src="images/v2/flower-pink.svg"   alt="" class="portal-shape" style="width:150px; top:88%; right:3%; opacity:0.3;"  data-depth="0.25">
+
+    <!-- Quote -->
+    <div class="quote-overlay">
+        <p>Attempting to uncover the substrates of our social, imaginative, and introspective minds pushes against my spiritual and artistic wonder for the existence of these capacities in ourselves. Working on and around AI will continue to bring me closer to the magic, spirituality, and divinity of the world. Mystery itself isn't what preserves the sacred. If AI feels like a threat to these sacred tenants of the world and our existence it's because our understanding of ourselves and the natural world is still so impoverished. We're building in it what we know how to, but we cannot build in a machine what we do not understand in ourselves. I view science and technology as one medium for these <a href="https://web.seducoahuila.gob.mx/biblioweb/upload/THOUGHT_FORMS.pdf" target="_blank">thought forms</a> and seek to understand them more deeply by instantiating them in machines.</p>
+    </div>
+
+    <!-- Cursor orb -->
+    <div class="cursor-orb"></div>
+
+    <script>
+        // Cursor orb
+        const orb = document.querySelector('.cursor-orb');
+        document.addEventListener('mousemove', (e) => {
+            orb.style.left = e.clientX + 'px';
+            orb.style.top = e.clientY + 'px';
+        });
+
+        // --- Lightweight shape animation ---
+        // Organic drift using layered sine waves (no library needed)
+        function drift(t, seed) {
+            return Math.sin(t * 0.7 + seed) * 0.5
+                 + Math.sin(t * 1.3 + seed * 2.3) * 0.3
+                 + Math.sin(t * 0.4 + seed * 4.1) * 0.2;
+        }
+
+        // Gather shapes and build per-shape config
+        const shapes = Array.from(document.querySelectorAll('.portal-shape')).map((el, i) => {
+            const depth = parseFloat(el.dataset.depth) || 0.5;
+            const seed = i * 137.508; // golden-angle spread for unique paths
+            return {
+                el,
+                depth,
+                seed,
+                driftAmp:   15 + depth * 35,          // near shapes drift more
+                breatheSpd: 0.25 + Math.random() * 0.4,
+                breatheAmt: 0.015 + Math.random() * 0.04,
+                spinSpd:    (Math.random() - 0.5) * 0.15,
+            };
+        });
+
+        let mx = 0.5, my = 0.5; // normalised mouse 0-1
+        document.addEventListener('mousemove', (e) => {
+            mx = e.clientX / window.innerWidth;
+            my = e.clientY / window.innerHeight;
+        });
+
+        let t = 0;
+        function animate() {
+            t += 0.012;
+
+            for (const s of shapes) {
+                // Organic drift
+                const dx = drift(t, s.seed)       * s.driftAmp;
+                const dy = drift(t, s.seed + 100)  * s.driftAmp;
+
+                // Mouse parallax — far shapes shift more (opposite feels deeper)
+                const px = (mx - 0.5) * (1 - s.depth) * -80;
+                const py = (my - 0.5) * (1 - s.depth) * -50;
+
+                // Breathing
+                const scale = 1 + Math.sin(t * s.breatheSpd + s.seed) * s.breatheAmt;
+
+                // Slow rotation
+                const rot = t * s.spinSpd * 15;
+
+                s.el.style.transform =
+                    'translate3d(' + (dx + px) + 'px,' + (dy + py) + 'px,0) ' +
+                    'rotate(' + rot + 'deg) ' +
+                    'scale(' + scale + ')';
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        requestAnimationFrame(animate);
+    </script>
+</body>
+</html>
