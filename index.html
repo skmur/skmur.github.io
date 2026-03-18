@@ -107,7 +107,7 @@
                 
             <!-- <p>Attempting to uncover the substrates of our social, imaginative, and introspective minds pushes against my spiritual and artistic wonder for the existence of these capacities in ourselves. I view science and technology as one medium for these <a href="https://web.seducoahuila.gob.mx/biblioweb/upload/THOUGHT_FORMS.pdf" target="_blank">thought forms</a> and seek to understand them more deeply by instantiating them in machines.</p> -->
 
-            <p>I am currently exploring these threads as a PhD student in Computer Science at Harvard University. I am grateful to be advised by Tomer Ullman and to be supported by an NSF Graduate Research Fellowship and Kempner Institute Graduate Fellowship. Previously, I have spent time at ML Alignment & Theory Scholars (MATS), the Allen Institute for Artificial Intelligence (AI2), and Princeton University's Computational Cognitive Science Lab, where I gained mentors and collaborators who continue to shape my research.</p>
+            <p>I am currently exploring these threads as a PhD student in Computer Science at Harvard University. I am grateful to be advised by Tomer Ullman and Elena Glassman, and to be supported by an NSF Graduate Research Fellowship and Kempner Institute Graduate Fellowship. Previously, I have spent time at ML Alignment & Theory Scholars (MATS), the Allen Institute for Artificial Intelligence (AI2), and Princeton University's Computational Cognitive Science Lab, where I gained mentors and collaborators who continue to shape my research.</p>
 
         </section>
 
@@ -193,15 +193,21 @@
          <section class="talks">
             <h2>Invited talks</h2>
 
-            <p><span class="author-highlight">February 2026</span> Brown University, ANCOR seminar series</p>
+            <!-- <p><img src="images/v2/sparkle-1.svg" alt="sparkle" class="inline-sparkle"> spotlight talk</p> -->
+
+            <p><span class="author-highlight">February 2026 </span> Brown University, ANCOR seminar series</p>
             <!-- <p><span class="author-highlight">January 2026</span> Bay Area AI Safety meetup</p> -->
+            <!-- <p><span class="author-highlight">December 2025</span><img src="images/v2/sparkle-1.svg" alt="sparkle" class="inline-sparkle">Interpreting Cognition in Deep Learning Models workshop @ NeurIPS</p> -->
             <p><span class="author-highlight">November 2025</span> Google DeepMind, VOICES team</p>
+            <!-- <p><span class="author-highlight">October 2025</span><img src="images/v2/sparkle-1.svg" alt="sparkle" class="inline-sparkle">Pragmatic Reasoning in Language Models workshop @ COLM</p> -->
             <p><span class="author-highlight">October 2025</span> Annual Meeting of the Society for Neuroeconomics, "AI in Neuroeconomics" panel</p>
+
+            
 
         </section>
 
         <section class="end">
-            <p>If you would like to chat about research, or are a woman/minority student considering graduate school in Psychology or Computer Science, please feel free to reach out to me at <span class="email">soniamurthy [at] g [dot] harvard [dot] edu and I will do my best to respond! </span></p>
+            <p>If you would like to chat about research, or are a woman/minority student considering graduate school in Psychology or Computer Science, please feel free to reach out to me at <span class="email">soniamurthy [at] g [dot] harvard [dot] edu</span> and I will do my best to respond! </span></p>
 
             <!-- <a href="portal.html">
                 <img src="images/v2/eye-1.svg" alt="" class="portal-icon">
@@ -229,8 +235,8 @@
             const imageData = ctx.createImageData(size, size);
             for (let i = 0; i < imageData.data.length; i += 4) {
                 const v = Math.random() * 255;
-                imageData.data[i] = v;
-                imageData.data[i + 1] = v;
+                imageData.data[i] = v * 0.25;
+                imageData.data[i + 1] = v * 0.7;
                 imageData.data[i + 2] = v;
                 imageData.data[i + 3] = 255;
             }

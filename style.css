@@ -59,21 +59,22 @@ body {
     left: -5%;
     width: 110%;
     height: 110%;
-    opacity: 0.08;
+    opacity: 0.25;
     pointer-events: none;
-    z-index: 3;
+    z-index: 1;
     will-change: opacity;
 }
 
 /* Portrait Background */
 .portrait-container {
     position: fixed;
-    top: 35%;
+    top: 28%;
     /* bottom: 0;
     left: 20; */
-    height: 70vh;
+    height: 80vh;
+    left: -3%;
     width: auto;
-    z-index: 1;
+    z-index: 2;
     pointer-events: auto;
 }
 
@@ -571,7 +572,7 @@ body {
     width: 210px;
     top: 74%;
     left: 24%;
-    z-index: 2;
+    z-index: 3;
     pointer-events: none;
     transform: rotate(10deg);
 }
@@ -653,6 +654,7 @@ body {
     padding: 80px 100px;
     position: relative;
     z-index: 5;
+
 }
 
 /* Om Symbol */
@@ -751,7 +753,7 @@ a:hover {
 }
 
 .author-highlight {
-    color: #16bbaa;
+    color: #ff50a7;
 }
 
 .venue {
