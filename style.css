@@ -768,16 +768,18 @@ body {
 
 /* Om Symbol */
 .om-symbol {
-    font-size: 1.2rem;
-    color: var(--link-color);
-    margin-bottom: 1.5rem;
+    font-family: 'Helvetica Neue Condensed', 'Helvetica Condensed', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
     text-align: center;
+    opacity: 0.9;
 }
 
 /* Typography - using clamp for fluid responsive sizing */
 h1, h2, h3 {
     font-family: 'jgs', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.1);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 255, 255, 0.5), 0 0 50px rgba(255, 255, 255, 0.3), 0 0 80px rgba(255, 255, 255, 0.15);
 }
 
 h1 {
@@ -813,7 +815,6 @@ p {
     margin-bottom: 1rem;
     color: var(--text-secondary);
     text-align: justify;
-    text-shadow: 0 0 15px rgba(184, 184, 200, 0.2);
 }
 
 /* Sections */
