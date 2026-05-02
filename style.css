@@ -53,7 +53,9 @@ body {
 }
 
 /* Background grain texture - procedural SVG noise, on top of graphics, behind text */
+/* Disabled - set display: block to re-enable */
 .grain-overlay {
+    display: none;
     position: fixed;
     top: -5%;
     left: -5%;
@@ -68,11 +70,9 @@ body {
 /* Portrait Background */
 .portrait-container {
     position: fixed;
-    top: 28%;
-    /* bottom: 0;
-    left: 20; */
-    height: 80vh;
-    left: -3%;
+    bottom: -5%;
+    height: clamp(55vh, 75vh, 90vh);
+    left: clamp(-5%, 2vw, 5%);
     width: auto;
     z-index: 2;
     pointer-events: auto;
@@ -184,376 +184,378 @@ body {
 /* Non-sparkle shapes are static */
 
 /* Sparkles with varying sizes - spread across entire viewport, behind portrait */
+/* Using viewport-relative units for responsive scaling */
 .shape-sparkle-1 {
-    width: 18px;
+    width: clamp(12px, 1.2vw, 22px);
     top: 3%;
     left: 5%;
 }
 
 .shape-sparkle-2 {
-    width: 65px;
+    width: clamp(40px, 4vw, 75px);
     top: 7%;
     right: 38%;
 }
 
 .shape-sparkle-3 {
-    width: 24px;
+    width: clamp(16px, 1.5vw, 28px);
     top: 14%;
     left: 22%;
 }
 
 .shape-sparkle-4 {
-    width: 72px;
+    width: clamp(45px, 4.5vw, 85px);
     top: 11%;
     right: 5%;
 }
 
 .shape-sparkle-5 {
-    width: 15px;
+    width: clamp(10px, 1vw, 18px);
     top: 21%;
     left: 8%;
 }
 
 .shape-sparkle-6 {
-    width: 45px;
+    width: clamp(28px, 2.8vw, 52px);
     top: 26%;
     right: 12%;
 }
 
 .shape-sparkle-7 {
-    width: 28px;
+    width: clamp(18px, 1.8vw, 32px);
     top: 33%;
     left: 15%;
 }
 
 .shape-sparkle-8 {
-    width: 58px;
+    width: clamp(36px, 3.6vw, 68px);
     top: 38%;
     right: 3%;
 }
 
 .shape-sparkle-9 {
-    width: 20px;
+    width: clamp(14px, 1.3vw, 24px);
     top: 44%;
     left: 3%;
 }
 
 .shape-sparkle-10 {
-    width: 78px;
+    width: clamp(48px, 4.8vw, 90px);
     top: 41%;
     right: 18%;
 }
 
 .shape-sparkle-11 {
-    width: 32px;
+    width: clamp(20px, 2vw, 38px);
     top: 52%;
     left: 25%;
 }
 
 .shape-sparkle-12 {
-    width: 22px;
+    width: clamp(14px, 1.4vw, 26px);
     top: 57%;
     right: 8%;
 }
 
 /* More sparkles - organic placement across full viewport */
 .shape-sparkle-13 {
-    width: 55px;
+    width: clamp(34px, 3.4vw, 65px);
     top: 63%;
     left: 12%;
 }
 
 .shape-sparkle-14 {
-    width: 16px;
+    width: clamp(10px, 1vw, 20px);
     top: 68%;
     right: 52%;
 }
 
 .shape-sparkle-15 {
-    width: 42px;
+    width: clamp(26px, 2.6vw, 50px);
     top: 72%;
     left: 6%;
 }
 
 .shape-sparkle-16 {
-    width: 26px;
+    width: clamp(16px, 1.6vw, 30px);
     top: 78%;
     right: 38%;
 }
 
 .shape-sparkle-17 {
-    width: 68px;
+    width: clamp(42px, 4.2vw, 80px);
     top: 82%;
     left: 18%;
 }
 
 .shape-sparkle-18 {
-    width: 19px;
+    width: clamp(12px, 1.2vw, 22px);
     top: 86%;
     right: 25%;
 }
 
 .shape-sparkle-19 {
-    width: 48px;
+    width: clamp(30px, 3vw, 55px);
     top: 91%;
     left: 10%;
 }
 
 .shape-sparkle-20 {
-    width: 14px;
+    width: clamp(9px, 0.9vw, 17px);
     top: 17%;
     right: 58%;
 }
 
 .shape-sparkle-21 {
-    width: 36px;
+    width: clamp(22px, 2.2vw, 42px);
     top: 48%;
     left: 20%;
 }
 
 .shape-sparkle-22 {
-    width: 52px;
+    width: clamp(32px, 3.2vw, 60px);
     top: 75%;
     right: 50%;
 }
 
 /* Additional larger sparkles on the left */
 .shape-sparkle-23 {
-    width: 85px;
+    width: clamp(52px, 5.2vw, 100px);
     top: 8%;
     left: 12%;
 }
 
 .shape-sparkle-24 {
-    width: 70px;
+    width: clamp(44px, 4.4vw, 82px);
     top: 28%;
     left: 1%;
 }
 
 .shape-sparkle-25 {
-    width: 90px;
+    width: clamp(55px, 5.5vw, 105px);
     top: 55%;
     left: 8%;
 }
 
 .shape-sparkle-26 {
-    width: 75px;
+    width: clamp(46px, 4.6vw, 88px);
     top: 38%;
     left: 18%;
 }
 
 .shape-sparkle-27 {
-    width: 80px;
+    width: clamp(50px, 5vw, 95px);
     top: 85%;
     left: 2%;
 }
 
 /* Additional sparkles between eye, bindu and purple flower */
 .shape-sparkle-28 {
-    width: 45px;
+    width: clamp(28px, 2.8vw, 52px);
     top: 25%;
     left: 32%;
 }
 
 .shape-sparkle-29 {
-    width: 28px;
+    width: clamp(18px, 1.8vw, 32px);
     top: 38%;
     left: 28%;
 }
 
 .shape-sparkle-30 {
-    width: 55px;
+    width: clamp(34px, 3.4vw, 65px);
     top: 52%;
     left: 35%;
 }
 
 .shape-sparkle-31 {
-    width: 22px;
+    width: clamp(14px, 1.4vw, 26px);
     top: 32%;
     left: 40%;
 }
 
 .shape-sparkle-32 {
-    width: 38px;
+    width: clamp(24px, 2.4vw, 45px);
     top: 62%;
     left: 30%;
 }
 
 .shape-sparkle-33 {
-    width: 32px;
+    width: clamp(20px, 2vw, 38px);
     top: 45%;
     left: 25%;
 }
 
 /* Sparkles intersecting viewport borders and bottom right */
 .shape-sparkle-34 {
-    width: 50px;
+    width: clamp(30px, 3vw, 58px);
     top: -1%;
     right: 28%;
 }
 
 .shape-sparkle-35 {
-    width: 35px;
+    width: clamp(22px, 2.2vw, 40px);
     top: 40%;
     right: -1%;
 }
 
 .shape-sparkle-36 {
-    width: 60px;
+    width: clamp(38px, 3.8vw, 70px);
     top: 92%;
     right: 15%;
 }
 
 .shape-sparkle-37 {
-    width: 28px;
+    width: clamp(18px, 1.8vw, 32px);
     top: 85%;
     right: 8%;
 }
 
 .shape-sparkle-38 {
-    width: 45px;
+    width: clamp(28px, 2.8vw, 52px);
     top: 78%;
     right: 3%;
 }
 
 .shape-sparkle-39 {
-    width: 22px;
+    width: clamp(14px, 1.4vw, 26px);
     top: 70%;
     right: -0.5%;
 }
 
 .shape-sparkle-40 {
-    width: 55px;
+    width: clamp(34px, 3.4vw, 65px);
     top: 88%;
     right: 22%;
 }
 
 .shape-sparkle-41 {
-    width: 30px;
+    width: clamp(18px, 1.8vw, 35px);
     top: 95%;
     right: 35%;
 }
 
 .shape-sparkle-42 {
-    width: 40px;
+    width: clamp(25px, 2.5vw, 46px);
     top: 65%;
     right: 12%;
 }
 
 /* Additional small sparkles scattered across background */
 .shape-sparkle-43 {
-    width: 12px;
+    width: clamp(8px, 0.8vw, 15px);
     top: 15%;
     left: 45%;
 }
 
 .shape-sparkle-44 {
-    width: 16px;
+    width: clamp(10px, 1vw, 19px);
     top: 33%;
     right: 55%;
 }
 
 .shape-sparkle-45 {
-    width: 10px;
+    width: clamp(6px, 0.6vw, 12px);
     top: 58%;
     left: 52%;
 }
 
 .shape-sparkle-46 {
-    width: 14px;
+    width: clamp(9px, 0.9vw, 17px);
     top: 22%;
     right: 65%;
 }
 
 .shape-sparkle-47 {
-    width: 18px;
+    width: clamp(11px, 1.1vw, 21px);
     top: 73%;
     left: 42%;
 }
 
 .shape-sparkle-48 {
-    width: 11px;
+    width: clamp(7px, 0.7vw, 13px);
     top: 8%;
     right: 72%;
 }
 
 .shape-sparkle-49 {
-    width: 15px;
+    width: clamp(10px, 1vw, 18px);
     top: 45%;
     left: 58%;
 }
 
 .shape-sparkle-50 {
-    width: 13px;
+    width: clamp(8px, 0.8vw, 16px);
     top: 82%;
     right: 48%;
 }
 
 .shape-sparkle-51 {
-    width: 17px;
+    width: clamp(11px, 1.1vw, 20px);
     top: 28%;
     left: 62%;
 }
 
 .shape-sparkle-52 {
-    width: 10px;
+    width: clamp(6px, 0.6vw, 12px);
     top: 67%;
     right: 60%;
 }
 
 .shape-sparkle-53 {
-    width: 14px;
+    width: clamp(9px, 0.9vw, 17px);
     top: 12%;
     left: 72%;
 }
 
 .shape-sparkle-54 {
-    width: 12px;
+    width: clamp(8px, 0.8vw, 15px);
     top: 50%;
     right: 78%;
 }
 
 .shape-sparkle-55 {
-    width: 16px;
+    width: clamp(10px, 1vw, 19px);
     top: 38%;
     left: 48%;
 }
 
 .shape-sparkle-56 {
-    width: 11px;
+    width: clamp(7px, 0.7vw, 13px);
     top: 90%;
     right: 62%;
 }
 
 .shape-sparkle-57 {
-    width: 15px;
+    width: clamp(10px, 1vw, 18px);
     top: 18%;
     left: 55%;
 }
 
 .shape-sparkle-58 {
-    width: 13px;
+    width: clamp(8px, 0.8vw, 16px);
     top: 76%;
     right: 70%;
 }
 
 .shape-sparkle-59 {
-    width: 18px;
+    width: clamp(11px, 1.1vw, 21px);
     top: 42%;
     left: 68%;
 }
 
 .shape-sparkle-60 {
-    width: 10px;
+    width: clamp(6px, 0.6vw, 12px);
     top: 60%;
     right: 82%;
 }
 
 /* Static positions for constellation shapes - spread organically, same categories far apart */
+/* Using viewport-relative units with clamp() for responsive scaling */
 
 /* tetris-1 - top right area */
 .shape-2 {
-    width: 160px;
+    width: clamp(100px, 10vw, 180px);
     top: 6%;
     right: 18%;
     transform: rotate(180deg);
@@ -561,7 +563,7 @@ body {
 
 /* tetris-2 - bottom left area (far from tetris-1) */
 .shape-3 {
-    width: 220px;
+    width: clamp(140px, 14vw, 250px);
     top: 82%;
     left: 12%;
 }
@@ -569,7 +571,7 @@ body {
 /* flower-purple - in front of portrait, slightly right */
 .shape-4 {
     position: fixed;
-    width: 210px;
+    width: clamp(130px, 13vw, 240px);
     top: 74%;
     left: 24%;
     z-index: 3;
@@ -579,42 +581,42 @@ body {
 
 /* cluster-blue - top left */
 .shape-5 {
-    width: 105px;
+    width: clamp(65px, 6.5vw, 120px);
     top: 7%;
     left: 3%;
 }
 
 /* cluster-purple - center area */
 .shape-6 {
-    width: 160px;
+    width: clamp(100px, 10vw, 180px);
     top: 35%;
     right: 42%;
 }
 
-/* cube-1 - mid-left at viewport edge */
+/* cube-1 - moved towards center */
 .shape-7 {
-    width: 150px;
+    width: clamp(95px, 9.5vw, 170px);
     top: 55%;
-    left: -2%;
+    left: 42%;
 }
 
 /* bindu - bottom right */
 .shape-8 {
-    width: 155px;
+    width: clamp(100px, 10vw, 175px);
     top: 77%;
     right: 28%;
 }
 
 /* eye-1 - behind Hello text */
 .shape-9 {
-    width: 180px;
+    width: clamp(115px, 11.5vw, 200px);
     top: 2%;
     left: 29%;
 }
 
 /* flower-blue - mid-right */
 .shape-10 {
-    width: 165px;
+    width: clamp(105px, 10.5vw, 185px);
     top: 48%;
     right: 8%;
     transform: rotate(15deg);
@@ -622,14 +624,14 @@ body {
 
 /* cube-2 - bottom right */
 .shape-11 {
-    width: 145px;
+    width: clamp(90px, 9vw, 165px);
     top: 80%;
     right: 2%;
 }
 
 /* eye-2 - lower center */
 .shape-13 {
-    width: 125px;
+    width: clamp(80px, 8vw, 140px);
     top: 58%;
     right: 42%;
 }
@@ -648,13 +650,12 @@ body {
 
 /* Main Content Container - above grain overlay */
 .content {
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: 80px;
-    padding: 80px 100px;
+    max-width: 1100px;
+    margin-left: max(48%, 380px);
+    margin-right: clamp(40px, 5vw, 100px);
+    padding: 80px clamp(40px, 6vw, 100px);
     position: relative;
     z-index: 5;
-
 }
 
 /* Om Symbol */
@@ -666,36 +667,37 @@ body {
     text-align: center;
 }
 
-/* Typography */
+/* Typography - using clamp for fluid responsive sizing */
 h1 {
-    font-size: 2rem;
+    font-size: clamp(2rem, 2.5vw, 2.8rem);
     font-weight: 400;
     color: var(--text-primary);
     margin-bottom: 0.5rem;
 }
 
-
 .subtitle {
-    font-size: 1rem;
+    font-size: clamp(1rem, 1.2vw, 1.3rem);
     color: var(--text-secondary);
     margin-bottom: 3rem;
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 2vw, 2rem);
     font-weight: 400;
     color: var(--text-primary);
     margin: 3rem 0 1rem;
 }
 
 h3 {
-    font-size: 1rem;
+    font-size: clamp(1.05rem, 1.3vw, 1.3rem);
     font-weight: 400;
     color: var(--text-primary);
     margin: 2rem 0 0.5rem;
 }
 
 p {
+    font-size: clamp(1rem, 1.15vw, 1.2rem);
+    line-height: 1.6;
     margin-bottom: 1rem;
     color: var(--text-secondary);
     text-align: justify;
@@ -746,7 +748,7 @@ a:hover {
 }
 
 .authors {
-    font-size: 0.9rem;
+    font-size: clamp(0.95rem, 1.05vw, 1.1rem);
     margin-bottom: 0.5rem;
     color: var(--text-secondary);
     font-style: italic;
@@ -757,13 +759,13 @@ a:hover {
 }
 
 .venue {
-    font-size: 0.9rem;
+    font-size: clamp(0.95rem, 1.05vw, 1.1rem);
     margin-bottom: 0.5rem;
     color: var(--text-secondary);
 }
 
 .note {
-    font-size: 0.85rem;
+    font-size: clamp(0.9rem, 1vw, 1.05rem);
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     color: var(--text-secondary);
@@ -806,21 +808,105 @@ a:hover {
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .content {
+        margin-left: 45%;
+    }
+}
+
 @media (max-width: 900px) {
     .content {
-        padding: 60px 60px;
-        margin-right: 40px;
+        padding: 60px 40px;
+        margin-left: 40%;
+        margin-right: 30px;
     }
 }
 
 @media (max-width: 600px) {
     .content {
-        padding: 40px 30px;
+        padding: 40px 25px;
         margin: 0 auto;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
     .portrait-container {
-        height: 46vh;
-        opacity: 0.3;
+        height: 45vh;
+        opacity: 0.25;
+        left: -10%;
+        bottom: 0;
+    }
+}
+
+/* Large screens - scale up graphics */
+@media (min-width: 1400px) {
+    .bg-shape {
+        transform: scale(1.15);
+    }
+
+    .shape-4 {
+        transform: rotate(10deg) scale(1.15);
+    }
+
+    .shape-2 {
+        transform: rotate(180deg) scale(1.15);
+    }
+
+    .shape-10 {
+        transform: rotate(15deg) scale(1.15);
+    }
+
+    [class*="shape-sparkle"] {
+        transform: scale(1.15);
+    }
+}
+
+/* Extra large screens - scale up more */
+@media (min-width: 1800px) {
+    .bg-shape {
+        transform: scale(1.35);
+    }
+
+    .shape-4 {
+        transform: rotate(10deg) scale(1.35);
+    }
+
+    .shape-2 {
+        transform: rotate(180deg) scale(1.35);
+    }
+
+    .shape-10 {
+        transform: rotate(15deg) scale(1.35);
+    }
+
+    [class*="shape-sparkle"] {
+        transform: scale(1.35);
+    }
+
+    .portrait-container {
+        height: 85vh;
+    }
+}
+
+/* Ultra wide screens */
+@media (min-width: 2200px) {
+    .bg-shape {
+        transform: scale(1.5);
+    }
+
+    .shape-4 {
+        transform: rotate(10deg) scale(1.5);
+    }
+
+    .shape-2 {
+        transform: rotate(180deg) scale(1.5);
+    }
+
+    .shape-10 {
+        transform: rotate(15deg) scale(1.5);
+    }
+
+    [class*="shape-sparkle"] {
+        transform: scale(1.5);
     }
 }
