@@ -91,7 +91,7 @@ body {
     left: -5%;
     width: 110%;
     height: 110%;
-    opacity: 0.20;
+    opacity: 0.12;
     pointer-events: none;
     z-index: 1;
     will-change: opacity;
@@ -114,6 +114,7 @@ body {
     display: block;
     object-fit: contain;
     object-position: bottom left;
+    filter: brightness(0.75);
 }
 
 /* Background Shapes */
@@ -130,6 +131,82 @@ body {
 .bg-shape {
     position: absolute;
     opacity: 0.5;
+    z-index: 4;
+}
+
+/* Motion path animations for shapes - natural wandering */
+@keyframes wander {
+    0% { offset-distance: 0%; }
+    100% { offset-distance: 100%; }
+}
+
+.shape-2, .shape-3, .shape-4, .shape-5, .shape-6,
+.shape-7, .shape-8, .shape-9, .shape-10, .shape-11 {
+    offset-rotate: 0deg;
+}
+
+/* Wander animation for each shape */
+.shape-2 { animation: wander 90s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
+.shape-3 { animation: wander 100s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
+.shape-5 { animation: wander 85s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
+.shape-6 { animation: wander 110s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
+.shape-7 { animation: wander 95s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
+.shape-8 { animation: wander 105s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
+.shape-9 { animation: wander 45s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
+.shape-10 { animation: wander 92s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
+.shape-11 { animation: wander 50s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
+.shape-4 { animation: wander 80s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
+
+
+/* Small localized wandering paths - gentle floating in place */
+.shape-2 {
+    /* Small drift in top right */
+    offset-path: path("M 0 0 C 30 -20 50 20 40 50 C 30 80 -20 60 -10 30 C 0 0 40 -10 20 40 C 0 90 -30 50 0 0");
+}
+
+.shape-3 {
+    /* Small drift in bottom left */
+    offset-path: path("M 0 0 C -25 30 20 60 50 40 C 80 20 40 -20 10 10 C -20 40 30 70 0 50 C -30 30 10 0 0 0");
+}
+
+.shape-5 {
+    /* Small drift in top left */
+    offset-path: path("M 0 0 C 20 30 -10 50 30 70 C 70 90 50 40 20 20 C -10 0 40 -20 60 20 C 80 60 30 80 0 50");
+}
+
+.shape-6 {
+    /* Small drift in center */
+    offset-path: path("M 0 0 C 40 -30 70 30 50 70 C 30 110 -20 80 0 40 C 20 0 60 -20 40 30 C 20 80 -30 50 0 0");
+}
+
+.shape-7 {
+    /* Small drift on left side */
+    offset-path: path("M 0 0 C 30 40 10 80 40 100 C 70 120 50 60 30 30 C 10 0 50 -20 70 20 C 90 60 40 90 0 60");
+}
+
+.shape-8 {
+    /* Small drift bottom right */
+    offset-path: path("M 0 0 C 35 25 60 70 40 100 C 20 130 -20 90 0 50 C 20 10 50 -10 30 30 C 10 70 -25 40 0 0");
+}
+
+.shape-9 {
+    /* Diagonal drift towards bottom right */
+    offset-path: path("M 0 0 C 30 40 60 80 90 120 C 120 160 80 100 50 60 C 20 20 70 70 100 110 C 130 150 60 90 30 50");
+}
+
+.shape-10 {
+    /* Small drift mid-right */
+    offset-path: path("M 0 0 C 40 -25 70 25 50 60 C 30 95 -15 70 10 35 C 35 0 65 -15 45 25 C 25 65 -20 40 0 0");
+}
+
+.shape-11 {
+    /* Vertical drift downward */
+    offset-path: path("M 0 0 C 10 50 -10 100 5 150 C 20 200 -15 160 0 110 C 15 60 -5 120 10 170 C 25 220 -10 180 0 130");
+}
+
+/* Purple flower - gentle small float */
+.shape-4 {
+    offset-path: path("M 0 0 C 25 -15 50 25 35 55 C 20 85 -15 65 5 35 C 25 5 55 -5 40 30 C 25 65 -20 45 0 15");
 }
 
 /* Sparkle twinkle animation */
@@ -591,19 +668,19 @@ body {
     transform: rotate(180deg);
 }
 
-/* tetris-2 - bottom left area (far from tetris-1) */
+/* tetris-2 - bottom left area */
 .shape-3 {
     width: clamp(140px, 14vw, 250px);
     top: 82%;
     left: 12%;
 }
 
-/* flower-purple - in front of portrait, slightly right */
+/* flower-purple - in front of portrait */
 .shape-4 {
     position: fixed;
     width: clamp(130px, 13vw, 240px);
     top: 80%;
-    left: 28%;
+    left: 38%;
     z-index: 3;
     pointer-events: none;
     transform: rotate(10deg);
@@ -624,11 +701,11 @@ body {
     right: 42%;
 }
 
-/* cube-1 - moved towards center */
+/* cube-1 - mid-left */
 .shape-7 {
     width: clamp(95px, 9.5vw, 170px);
     top: 55%;
-    left: 42%;
+    left: 0%;
 }
 
 /* bindu - bottom right */
@@ -823,19 +900,19 @@ a:hover {
 
 /* Font Credit */
 .font-credit {
-    display: flex;
-    justify-content: center;
-    margin-top: 4rem;
-    padding-bottom: 2rem;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 10;
 }
 
 .font-credit p {
     font-family: 'jgs', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     color: var(--text-secondary);
-    opacity: 0.6;
+    opacity: 0.5;
     text-shadow: none;
-    text-align: center;
+    text-align: right;
 }
 
 /* ============================================
