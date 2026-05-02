@@ -1,5 +1,38 @@
 /* Minimalist Dark Theme */
 
+/* Custom Fonts */
+@font-face {
+    font-family: 'Frame';
+    src: url('fonts/Frame.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Barlow-elasticc';
+    src: url('fonts/Barlow-elasticc.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Barlaxent';
+    src: url('fonts/Barlaxent.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'jgs';
+    src: url('fonts/jgs9.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --bg-dark: #000000;
     --text-primary: #ffffff;
@@ -47,21 +80,18 @@ html {
 body {
     font-family: 'Helvetica Neue Condensed', 'Helvetica Condensed', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
-    font-stretch: condensed;
     background-color: var(--bg-dark);
     position: relative;
 }
 
 /* Background grain texture - procedural SVG noise, on top of graphics, behind text */
-/* Disabled - set display: block to re-enable */
 .grain-overlay {
-    display: none;
     position: fixed;
     top: -5%;
     left: -5%;
     width: 110%;
     height: 110%;
-    opacity: 0.25;
+    opacity: 0.20;
     pointer-events: none;
     z-index: 1;
     will-change: opacity;
@@ -70,9 +100,9 @@ body {
 /* Portrait Background */
 .portrait-container {
     position: fixed;
-    bottom: -5%;
-    height: clamp(55vh, 75vh, 90vh);
-    left: clamp(-5%, 2vw, 5%);
+    bottom: -4%;
+    height: clamp(60vh, 70vh, 80vh);
+    left: 0%;
     width: auto;
     z-index: 2;
     pointer-events: auto;
@@ -99,7 +129,7 @@ body {
 
 .bg-shape {
     position: absolute;
-    opacity: 0.9;
+    opacity: 0.5;
 }
 
 /* Sparkle twinkle animation */
@@ -116,7 +146,7 @@ body {
 
 /* Apply twinkle to all sparkles */
 [class*="shape-sparkle"] {
-    opacity: 0.6;
+    opacity: 0.4;
     animation: twinkle ease-in-out infinite;
 }
 
@@ -572,11 +602,12 @@ body {
 .shape-4 {
     position: fixed;
     width: clamp(130px, 13vw, 240px);
-    top: 74%;
-    left: 24%;
+    top: 80%;
+    left: 28%;
     z-index: 3;
     pointer-events: none;
     transform: rotate(10deg);
+    opacity: 0.5;
 }
 
 /* cluster-blue - top left */
@@ -650,17 +681,16 @@ body {
 
 /* Main Content Container - above grain overlay */
 .content {
-    max-width: 1100px;
-    margin-left: max(48%, 380px);
-    margin-right: clamp(40px, 5vw, 100px);
-    padding: 80px clamp(40px, 6vw, 100px);
+    max-width: clamp(800px, 50vw, 1400px);
+    margin-left: max(44%, 340px);
+    margin-right: clamp(60px, 8vw, 140px);
+    padding: 80px clamp(40px, 5vw, 80px);
     position: relative;
     z-index: 5;
 }
 
 /* Om Symbol */
 .om-symbol {
-    font-family: 'Helvetica Neue Condensed', 'Helvetica Condensed', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.2rem;
     color: var(--link-color);
     margin-bottom: 1.5rem;
@@ -668,8 +698,13 @@ body {
 }
 
 /* Typography - using clamp for fluid responsive sizing */
+h1, h2, h3 {
+    font-family: 'jgs', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.1);
+}
+
 h1 {
-    font-size: clamp(2rem, 2.5vw, 2.8rem);
+    font-size: clamp(2.2rem, 2.8vw, 3rem);
     font-weight: 400;
     color: var(--text-primary);
     margin-bottom: 0.5rem;
@@ -682,25 +717,26 @@ h1 {
 }
 
 h2 {
-    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-size: clamp(1.6rem, 2.2vw, 2.4rem);
     font-weight: 400;
     color: var(--text-primary);
     margin: 3rem 0 1rem;
 }
 
 h3 {
-    font-size: clamp(1.05rem, 1.3vw, 1.3rem);
+    font-size: clamp(1.15rem, 1.4vw, 1.5rem);
     font-weight: 400;
     color: var(--text-primary);
     margin: 2rem 0 0.5rem;
 }
 
 p {
-    font-size: clamp(1rem, 1.15vw, 1.2rem);
+    font-size: clamp(0.9rem, 1vw, 1.05rem);
     line-height: 1.6;
     margin-bottom: 1rem;
     color: var(--text-secondary);
     text-align: justify;
+    text-shadow: 0 0 15px rgba(184, 184, 200, 0.2);
 }
 
 /* Sections */
@@ -748,7 +784,7 @@ a:hover {
 }
 
 .authors {
-    font-size: clamp(0.95rem, 1.05vw, 1.1rem);
+    font-size: clamp(0.85rem, 0.95vw, 1rem);
     margin-bottom: 0.5rem;
     color: var(--text-secondary);
     font-style: italic;
@@ -759,13 +795,13 @@ a:hover {
 }
 
 .venue {
-    font-size: clamp(0.95rem, 1.05vw, 1.1rem);
+    font-size: clamp(0.85rem, 0.95vw, 1rem);
     margin-bottom: 0.5rem;
     color: var(--text-secondary);
 }
 
 .note {
-    font-size: clamp(0.9rem, 1vw, 1.05rem);
+    font-size: clamp(0.8rem, 0.9vw, 0.95rem);
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     color: var(--text-secondary);
@@ -783,6 +819,23 @@ a:hover {
 /* Contact Section */
 .email {
     color: var(--text-secondary);
+}
+
+/* Font Credit */
+.font-credit {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+.font-credit p {
+    font-family: 'jgs', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    opacity: 0.6;
+    text-shadow: none;
+    text-align: center;
 }
 
 /* ============================================
@@ -884,7 +937,7 @@ a:hover {
     }
 
     .portrait-container {
-        height: 85vh;
+        height: 75vh;
     }
 }
 

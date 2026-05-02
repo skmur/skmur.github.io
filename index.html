@@ -214,6 +214,10 @@
             </a> -->
         </section>
 
+        <footer class="font-credit">
+            <p>Jgs font by Adel Faure. Distributed by velvetyne.fr.</p>
+        </footer>
+
     </main>
 
     <!-- Cursor orb -->
@@ -227,24 +231,24 @@
 
         // Generate grain texture once on load — tiny canvas, tiled as background
         (function generateGrain() {
-            const size = 256;
+            const size = 512;
             const canvas = document.createElement('canvas');
             canvas.width = size;
             canvas.height = size;
             const ctx = canvas.getContext('2d');
             const imageData = ctx.createImageData(size, size);
             for (let i = 0; i < imageData.data.length; i += 4) {
-                const v = Math.random() * 255;
-                imageData.data[i] = v * 0.25;
-                imageData.data[i + 1] = v * 0.7;
-                imageData.data[i + 2] = v;
+                // Multicolored grain - random RGB values with dark bias
+                imageData.data[i] = Math.random() * 100;      // Red
+                imageData.data[i + 1] = Math.random() * 120;  // Green
+                imageData.data[i + 2] = Math.random() * 180;  // Blue (slightly more)
                 imageData.data[i + 3] = 255;
             }
             ctx.putImageData(imageData, 0, 0);
             const grain = document.querySelector('.grain-overlay');
             grain.style.backgroundImage = `url(${canvas.toDataURL('image/png')})`;
             grain.style.backgroundRepeat = 'repeat';
-            grain.style.backgroundSize = `${size}px ${size}px`;
+            grain.style.backgroundSize = 'clamp(400px, 40vw, 800px) clamp(400px, 40vw, 800px)';
         })();
     </script>
 </body>
