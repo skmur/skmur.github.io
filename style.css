@@ -36,7 +36,7 @@
 :root {
     --bg-dark: #000000;
     --text-primary: #ffffff;
-    --text-secondary: #b8b8c8;
+    --text-secondary: #e2e2ea;
     --link-color: #41baee;
 }
 
@@ -134,159 +134,16 @@ body {
     z-index: 4;
 }
 
-/* Motion path animations for shapes - natural wandering */
-@keyframes wander {
-    0% { offset-distance: 0%; }
-    100% { offset-distance: 100%; }
-}
-
-.shape-2, .shape-3, .shape-4, .shape-5, .shape-6,
-.shape-7, .shape-8, .shape-9, .shape-10, .shape-11 {
-    offset-rotate: 0deg;
-}
-
-/* Wander animation for each shape */
-.shape-2 { animation: wander 90s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
-.shape-3 { animation: wander 100s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
-.shape-5 { animation: wander 85s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
-.shape-6 { animation: wander 110s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
-.shape-7 { animation: wander 95s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
-.shape-8 { animation: wander 105s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
-.shape-9 { animation: wander 45s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
-.shape-10 { animation: wander 92s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
-.shape-11 { animation: wander 50s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
-.shape-4 { animation: wander 80s cubic-bezier(0.4, 0, 0.6, 1) infinite alternate; }
-
-
-/* Small localized wandering paths - gentle floating in place */
-.shape-2 {
-    /* Small drift in top right */
-    offset-path: path("M 0 0 C 30 -20 50 20 40 50 C 30 80 -20 60 -10 30 C 0 0 40 -10 20 40 C 0 90 -30 50 0 0");
-}
-
-.shape-3 {
-    /* Small drift in bottom left */
-    offset-path: path("M 0 0 C -25 30 20 60 50 40 C 80 20 40 -20 10 10 C -20 40 30 70 0 50 C -30 30 10 0 0 0");
-}
-
-.shape-5 {
-    /* Small drift in top left */
-    offset-path: path("M 0 0 C 20 30 -10 50 30 70 C 70 90 50 40 20 20 C -10 0 40 -20 60 20 C 80 60 30 80 0 50");
-}
-
-.shape-6 {
-    /* Small drift in center */
-    offset-path: path("M 0 0 C 40 -30 70 30 50 70 C 30 110 -20 80 0 40 C 20 0 60 -20 40 30 C 20 80 -30 50 0 0");
-}
-
-.shape-7 {
-    /* Small drift on left side */
-    offset-path: path("M 0 0 C 30 40 10 80 40 100 C 70 120 50 60 30 30 C 10 0 50 -20 70 20 C 90 60 40 90 0 60");
-}
-
-.shape-8 {
-    /* Small drift bottom right */
-    offset-path: path("M 0 0 C 35 25 60 70 40 100 C 20 130 -20 90 0 50 C 20 10 50 -10 30 30 C 10 70 -25 40 0 0");
-}
-
-.shape-9 {
-    /* Diagonal drift towards bottom right */
-    offset-path: path("M 0 0 C 30 40 60 80 90 120 C 120 160 80 100 50 60 C 20 20 70 70 100 110 C 130 150 60 90 30 50");
-}
-
-.shape-10 {
-    /* Small drift mid-right */
-    offset-path: path("M 0 0 C 40 -25 70 25 50 60 C 30 95 -15 70 10 35 C 35 0 65 -15 45 25 C 25 65 -20 40 0 0");
-}
-
-.shape-11 {
-    /* Vertical drift downward */
-    offset-path: path("M 0 0 C 10 50 -10 100 5 150 C 20 200 -15 160 0 110 C 15 60 -5 120 10 170 C 25 220 -10 180 0 130");
-}
-
-/* Purple flower - gentle small float */
-.shape-4 {
-    offset-path: path("M 0 0 C 25 -15 50 25 35 55 C 20 85 -15 65 5 35 C 25 5 55 -5 40 30 C 25 65 -20 45 0 15");
-}
-
-/* Sparkle twinkle animation */
+/* Twinkle animation (used by portal icon) */
 @keyframes twinkle {
     0%, 100% { opacity: 0.2; }
     50% { opacity: 1; }
 }
 
-/* Slow constellation fade for shapes */
-@keyframes constellation {
-    0%, 100% { opacity: 0.1; }
-    50% { opacity: 0.85; }
-}
-
-/* Apply twinkle to all sparkles */
+/* Sparkles */
 [class*="shape-sparkle"] {
     opacity: 0.4;
-    animation: twinkle ease-in-out infinite;
 }
-
-.shape-sparkle-1 { animation-duration: 6.4s; animation-delay: -1.2s; }
-.shape-sparkle-2 { animation-duration: 8.2s; animation-delay: -4.1s; }
-.shape-sparkle-3 { animation-duration: 5.6s; animation-delay: -2.8s; }
-.shape-sparkle-4 { animation-duration: 7.4s; animation-delay: -5.9s; }
-.shape-sparkle-5 { animation-duration: 9.0s; animation-delay: -3.2s; }
-.shape-sparkle-6 { animation-duration: 6.0s; animation-delay: -0.8s; }
-.shape-sparkle-7 { animation-duration: 7.8s; animation-delay: -6.3s; }
-.shape-sparkle-8 { animation-duration: 5.2s; animation-delay: -2.1s; }
-.shape-sparkle-9 { animation-duration: 8.6s; animation-delay: -7.4s; }
-.shape-sparkle-10 { animation-duration: 6.8s; animation-delay: -4.5s; }
-.shape-sparkle-11 { animation-duration: 5.8s; animation-delay: -1.6s; }
-.shape-sparkle-12 { animation-duration: 7.2s; animation-delay: -3.9s; }
-.shape-sparkle-13 { animation-duration: 8.0s; animation-delay: -5.2s; }
-.shape-sparkle-14 { animation-duration: 6.2s; animation-delay: -2.4s; }
-.shape-sparkle-15 { animation-duration: 5.4s; animation-delay: -4.7s; }
-.shape-sparkle-16 { animation-duration: 7.6s; animation-delay: -1.3s; }
-.shape-sparkle-17 { animation-duration: 8.4s; animation-delay: -6.8s; }
-.shape-sparkle-18 { animation-duration: 6.6s; animation-delay: -3.5s; }
-.shape-sparkle-19 { animation-duration: 5.0s; animation-delay: -0.6s; }
-.shape-sparkle-20 { animation-duration: 7.0s; animation-delay: -5.4s; }
-.shape-sparkle-21 { animation-duration: 8.8s; animation-delay: -2.9s; }
-.shape-sparkle-22 { animation-duration: 6.4s; animation-delay: -4.2s; }
-.shape-sparkle-23 { animation-duration: 7.2s; animation-delay: -1.8s; }
-.shape-sparkle-24 { animation-duration: 5.8s; animation-delay: -3.1s; }
-.shape-sparkle-25 { animation-duration: 8.0s; animation-delay: -6.5s; }
-.shape-sparkle-26 { animation-duration: 6.6s; animation-delay: -0.9s; }
-.shape-sparkle-27 { animation-duration: 7.4s; animation-delay: -4.8s; }
-.shape-sparkle-28 { animation-duration: 6.8s; animation-delay: -2.3s; }
-.shape-sparkle-29 { animation-duration: 7.6s; animation-delay: -5.7s; }
-.shape-sparkle-30 { animation-duration: 5.4s; animation-delay: -3.6s; }
-.shape-sparkle-31 { animation-duration: 8.2s; animation-delay: -1.4s; }
-.shape-sparkle-32 { animation-duration: 6.2s; animation-delay: -4.9s; }
-.shape-sparkle-33 { animation-duration: 7.0s; animation-delay: -2.7s; }
-.shape-sparkle-34 { animation-duration: 6.4s; animation-delay: -5.1s; }
-.shape-sparkle-35 { animation-duration: 7.8s; animation-delay: -0.5s; }
-.shape-sparkle-36 { animation-duration: 5.6s; animation-delay: -3.8s; }
-.shape-sparkle-37 { animation-duration: 8.4s; animation-delay: -7.1s; }
-.shape-sparkle-38 { animation-duration: 6.0s; animation-delay: -1.9s; }
-.shape-sparkle-39 { animation-duration: 7.2s; animation-delay: -4.4s; }
-.shape-sparkle-40 { animation-duration: 5.8s; animation-delay: -2.6s; }
-.shape-sparkle-41 { animation-duration: 8.0s; animation-delay: -6.2s; }
-.shape-sparkle-42 { animation-duration: 6.6s; animation-delay: -3.3s; }
-.shape-sparkle-43 { animation-duration: 5.2s; animation-delay: -0.7s; }
-.shape-sparkle-44 { animation-duration: 7.4s; animation-delay: -5.6s; }
-.shape-sparkle-45 { animation-duration: 6.0s; animation-delay: -2.2s; }
-.shape-sparkle-46 { animation-duration: 7.6s; animation-delay: -4.1s; }
-.shape-sparkle-47 { animation-duration: 5.6s; animation-delay: -1.1s; }
-.shape-sparkle-48 { animation-duration: 7.0s; animation-delay: -6.4s; }
-.shape-sparkle-49 { animation-duration: 6.4s; animation-delay: -3.7s; }
-.shape-sparkle-50 { animation-duration: 8.0s; animation-delay: -0.4s; }
-.shape-sparkle-51 { animation-duration: 5.4s; animation-delay: -4.6s; }
-.shape-sparkle-52 { animation-duration: 7.6s; animation-delay: -2.5s; }
-.shape-sparkle-53 { animation-duration: 6.2s; animation-delay: -5.3s; }
-.shape-sparkle-54 { animation-duration: 8.4s; animation-delay: -1.7s; }
-.shape-sparkle-55 { animation-duration: 5.8s; animation-delay: -3.4s; }
-.shape-sparkle-56 { animation-duration: 7.2s; animation-delay: -6.1s; }
-.shape-sparkle-57 { animation-duration: 6.8s; animation-delay: -0.3s; }
-.shape-sparkle-58 { animation-duration: 8.6s; animation-delay: -4.3s; }
-.shape-sparkle-59 { animation-duration: 5.0s; animation-delay: -2.0s; }
-.shape-sparkle-60 { animation-duration: 7.8s; animation-delay: -5.8s; }
 
 /* Non-sparkle shapes are static */
 
